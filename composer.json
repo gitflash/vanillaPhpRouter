@@ -2,6 +2,7 @@
     "name": "hichemkhial/php-router",
     "description": "A simple vanilla php router",
     "license": "MIT",
+    "version": "1.0",
     "authors": [
         {
             "name": "Ali Hichem KHIAL",
