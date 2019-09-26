@@ -2,7 +2,7 @@
     "name": "hichemkhial/php-router",
     "description": "A simple vanilla php router",
     "type": "composer-plugin",
-    "license": "GPL",
+    "license": "CC0-1.0",
     "authors": [
         {
             "name": "Ali Hichem KHIAL",
