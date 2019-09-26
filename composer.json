@@ -1,0 +1,22 @@
+{
+    "name": "hichemkhial/php-router",
+    "description": "A simple vanilla php router",
+    "type": "composer-plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Ali Hichem KHIAL",
+            "email": "khial.ali.hichem@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Router\\": "src/"
+        }
+    }
+
+}
