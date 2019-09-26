@@ -1,5 +1,5 @@
 <?php 
-namespace Router;
+namespace App\Router;
 class SayHello
 {
     public static function world()
