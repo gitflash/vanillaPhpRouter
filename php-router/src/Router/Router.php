@@ -2,7 +2,26 @@
 namespace Routing\Router;
 class Router
 {
+    /**
+     * TODO:
+     * Add getters / setters
+     * Improve _dispatchRequest
+     * Add post request body management
+     * Complete list of headers in the _result function 
+     */
+    
+    /**
+     * $allowed_http_requests 
+     *
+     * @var array
+     */
     protected $allowed_http_requests = ['GET', 'POST', 'PATCH' , 'DELETE'];
+
+    /**
+     * $request_method_mapping
+     *
+     * @var array
+     */
     protected $request_method_mapping = [
         'GET' => 'get',
         'POST' => 'create',
@@ -10,7 +29,41 @@ class Router
         'DELETE' => 'delete'
     ];
 
-    protected $request_method, $instance, $class, $method_arguments, $uri_segments;
+    /**
+     * $request_method
+     *
+     * @var string
+     */
+    protected $request_method;
+
+    /**
+     * $instance
+     *
+     * @var object
+     */
+    protected $instance;
+
+    /**
+     * $class
+     *
+     * @var string
+     */
+    protected $class;
+
+    /**
+     * $method_arguments
+     *
+     * @var array
+     */
+    protected $method_arguments;
+
+    /**
+     * $uri_segments
+     *
+     * @var array
+     */
+    protected $uri_segments;
+
 
     public function __construct() {
         $this->request_method = $_SERVER['REQUEST_METHOD'];
@@ -23,7 +76,7 @@ class Router
             return ucfirst($item);
         },explode('.',$class))) . 'Controller';
     
-           
+        // Experiencing challenge to load the controller folder from the composer package   
         if (file_exists( __DIR__ . '/../../../../../controller/' . $class . '.php')) {
             require_once __DIR__ . '/../../../../../controller/' . $class . '.php';
         } elseif (file_exists( __DIR__ . '/../../../testproject/controller/'. $class . '.php' )) {
@@ -47,8 +100,6 @@ class Router
     } 
 
     private function _instance() {
-        if (!is_object($this->instance))
-        //echo $this->class;
         $this->instance = new $this->class;
     }
 
