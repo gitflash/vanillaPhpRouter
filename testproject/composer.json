@@ -1,0 +1,21 @@
+{
+    "require": {
+        "hichemkhial/php-router":"@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../php-router",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+        "Controller\\":"controller/"
+        }
+    }
+      
+}

@@ -1,0 +1,52 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "8567b967677ed27ff7e592f817e00c76",
+    "packages": [
+        {
+            "name": "hichemkhial/php-router",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "../php-router",
+                "reference": "f88a3115310f023b632d75ba8df809a8cee77142",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Routing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ali Hichem KHIAL",
+                    "email": "khial.ali.hichem@gmail.com"
+                }
+            ],
+            "description": "A simple vanilla php router",
+            "transport-options": {
+                "symlink": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "hichemkhial/php-router": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

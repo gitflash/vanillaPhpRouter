@@ -1,0 +1,36 @@
+[
+    {
+        "name": "hichemkhial/php-router",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "dist": {
+            "type": "path",
+            "url": "../php-router",
+            "reference": "f88a3115310f023b632d75ba8df809a8cee77142",
+            "shasum": null
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Routing\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ali Hichem KHIAL",
+                "email": "khial.ali.hichem@gmail.com"
+            }
+        ],
+        "description": "A simple vanilla php router",
+        "transport-options": {
+            "symlink": true
+        }
+    }
+]
