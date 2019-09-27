@@ -18,16 +18,20 @@ class Router
     }
 
     public static function resource($class) {
+        
         $class = implode('', array_map( function ($item) {
             return ucfirst($item);
         },explode('.',$class))) . 'Controller';
-
-        if (file_exists(__DIR__ . '/../../controller/' . $class . '.php')) {
-            require_once __DIR__ . '/../../controller/' . $class . '.php';
+    
+           
+        if (file_exists( __DIR__ . '/../../../../../controller/' . $class . '.php')) {
+            require_once __DIR__ . '/../../../../../controller/' . $class . '.php';
+        } elseif (file_exists( __DIR__ . '/../../../testproject/controller/'. $class . '.php' )) {
+            require_once  __DIR__ . '/../../../testproject/controller/'. $class . '.php';
         } else {
             echo "Controller not found";
             die;
-        }
+        }   
     }
 
     public function start() {
@@ -38,8 +42,13 @@ class Router
         Self::result();
     }
 
+    private function _checkRequest() {
+        if (!in_array($this->request_method, $this->allowed_http_requests)) die('Http Request not allowed');
+    } 
+
     private function _instance() {
         if (!is_object($this->instance))
+        //echo $this->class;
         $this->instance = new $this->class;
     }
 
@@ -55,10 +64,6 @@ class Router
 
     private function _prepClass() {
         $this->class = implode('', array_map(function($item) { return ucfirst($item); },array_filter($this->uri_segments, function($index) {return !($index & 1);} ,ARRAY_FILTER_USE_KEY))). 'Controller';
-    }
-
-    private function _checkRequest() {
-        if (!in_array($this->request_method, $this->allowed_http_requests)) die('Http Request not allowed');
     }
 
     private function _dispatchRequest() {
